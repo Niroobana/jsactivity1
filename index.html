@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <title>Show Trackr</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-light bg-light nav-item">
+    <a class="navbar-brand">Show<b>Trackr</b></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item Active">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+      </br>
+        <li class="nav-item">
+          <a class="nav-link" href="add.html">Add</a>
+        </li>
+
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="login.html">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="signup.html">Sign up</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+<section class="show">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <ul class="alfilters text-center">
+            <li class="active" data-filter=".0-9"><a href="#">0-9</a> </li>
+            <li data-filter=".a"><a href="#">A</a> </li>
+            <li data-filter=".b"><a href="#">B</a> </li>
+            <li data-filter=".c"><a href="#">C</a> </li>
+            <li data-filter=".d"><a href="#">D</a> </li>
+            <li data-filter=".e"><a href="#">E</a> </li>
+            <li data-filter=".f"><a href="#">F</a> </li>
+            <li data-filter=".g"><a href="#">G</a> </li>
+            <li data-filter=".h"><a href="#">H</a> </li>
+            <li data-filter=".i"><a href="#">I</a> </li>
+            <li data-filter=".j"><a href="#">J</a> </li>
+            <li data-filter=".k"><a href="#">K</a> </li>
+            <li data-filter=".l"><a href="#">L</a> </li>
+            <li data-filter=".m"><a href="#">M</a> </li>
+            <li data-filter=".n"><a href="#">N</a> </li>
+            <li data-filter=".o"><a href="#">O</a> </li>
+            <li data-filter=".p"><a href="#">P</a> </li>
+            <li data-filter=".q"><a href="#">Q</a> </li>
+            <li data-filter=".r"><a href="#">R</a> </li>
+            <li data-filter=".s"><a href="#">S</a> </li>
+            <li data-filter=".t"><a href="#">T</a> </li>
+            <li data-filter=".u"><a href="#">U</a> </li>
+            <li data-filter=".v"><a href="#">V</a> </li>
+            <li data-filter=".w"><a href="#">W</a> </li>
+            <li data-filter=".x"><a href="#">X</a> </li>
+            <li data-filter=".y"><a href="#">Y</a> </li>
+            <li data-filter=".z"><a href="#">Z</a> </li>
+          </ul>
+
+          <ul>
+          <ul class="filters text-center">
+            <li class="active" data-filter=".all"><a href="#">All</a> </li>
+            <li data-filter=".action"><a href="#">action</a> </li>
+            <li data-filter=".adventure"><a href="#">adventure</a> </li>
+            <li data-filter=".animation"><a href="#">animation</a> </li>
+            <li data-filter=".children"><a href="#">children</a> </li>
+            <li data-filter=".comedy"><a href="#">comedy</a> </li>
+            <li data-filter=".crime"><a href="#">crime</a> </li>
+            <li data-filter=".documentry"><a href="#">documentry</a> </li>
+            <li data-filter=".drama"><a href="#">drama</a> </li>
+            <li data-filter=".family"><a href="#">family</a> </li>
+            <li data-filter=".fantasy"><a href="#">fantasy</a> </li>
+            <li data-filter=".food"><a href="#">food</a> </li>
+            <li data-filter=".homegarden"><a href="#">home and garden</a> </li>
+            <li data-filter=".horror"><a href="#">horror</a> </li>
+            <li data-filter=".miniseiries"><a href="#">mini seiries</a> </li>
+            <li data-filter=".mystery"><a href="#">mystery</a> </li>
+            <li data-filter=".news"><a href="#">news</a> </li>
+            <li data-filter=".reality"><a href="#">reality</a> </li>
+            <li data-filter=".romance"><a href="#">romance</a> </li>
+            <li data-filter=".scifi"><a href="#">sci-fi</a> </li>
+            <li data-filter=".sports"><a href="#">sports</a> </li>
+            <li data-filter=".suspense"><a href="#">suspense</a> </li>
+            <li data-filter=".talkshow"><a href="#">talk show</a> </li>
+            <li data-filter=".thriller"><a href="#">thriller</a> </li>
+            <li data-filter=".travel"><a href="#">travel</a> </li>
+          </ul>
+          <!-- isotope script -->
+          <script>
+            $('.forfl').isotope({
+              itemSelector: '.forfl',
+              layoutMode: 'fitRows'
+            });
+
+            $('ul.filters > li').click(function () {
+              $('ul.filters > li').removeClass('active');
+              $(this).addClass('active');
+
+              var selector = $(this).attr('data-filter')
+              $('.forfl').isotope({
+                filter: selector
+              });
+              return false
+            });
+          </script>
+
+          <script>
+            $('.forfl').isotope({
+              itemSelector: '.forfl',
+              layoutMode: 'fitRows'
+            });
+
+            $('ul.alfilters > li').click(function () {
+              $('ul.alfilters > li').removeClass('active');
+              $(this).addClass('active');
+
+              var selector = $(this).attr('data-filter')
+              $('.forfl').isotope({
+                filter: selector
+              });
+              return false
+            });
+          </script>
+<!-- end  -->
+</div>
+</div>
+</div>
+  </section>
+  <section class="mysec " id="gallery">
+    <div class="container mycont ">
+      <p class="topshow ">Top 12 Shows</p>
+      <input id="myInput" class="search" type="text" placeholder="Search..">
+      <hr>
+      <div class="row forfl ">
+        <div class="col-lg-3 mb-4 all crime horror miniseiries mystery reality suspense talkshow thriller t">
+          <div class="card">
+            <a href="witcher.html">
+              <img src="image/1.jpeg" alt="" class="card-img-top"></a>
+            <div class="card-body">
+              <h5 class="card-title">The Witcher</h5>
+              <p class="card-text">Episodes: 2</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 mb-4 all action adventure children documentry family fantasy food horror mystery scifi sports thriller travel s">
+          <div class="card">
+            <a href="Shadow.html">
+              <img src="image/2.jpeg" alt="" class="card-img-top"></a>
+            <div class="card-body">
+              <h5 class="card-title">Shadow and Bone</h5>
+              <p class="card-text">Episodes: 7</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 mb-4 all action adventure fantasy miniseiries reality suspense g">
+          <div class="card">
+            <a href="Georgia.html">
+              <img src="image/3.jpeg" alt="" class="card-img-top"></a>
+            <div class="card-body">
+              <h5 class="card-title">Ginny and Georgia </h5>
+              <p class="card-text">Episodes: 1</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 mb-4 all adventure family homegarden horror mystery news thriller g">
+          <div class="card">
+            <a href="goodwitch.html">
+              <img src="image/4.jpeg"  alt="" class="card-img-top"></a>
+            <div class="card-body">
+              <h5 class="card-title">Good Witch</h5>
+              <p class="card-text">Episodes: 3</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 mb-4 all drama children comedy family fantasy s">
+          <div class="card">
+            <a href="description5.html">
+              <img src="image/5.jpeg" alt="" class="card-img-top"></a>
+            <div class="card-body">
+              <h5 class="card-title">Steven Universe </h5>
+              <p class="card-text">Episodes: 4</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 mb-4 all action adventure children comedy family fantasy news f">
+          <div class="card">
+            <a href="description6.html">
+              <img src="image/6.jpeg" alt="" class="card-img-top"></a>
+            <div class="card-body">
+              <h5 class="card-title">Final Space </h5>
+              <p class="card-text">Episodes: 7</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 mb-4 all action family horror miniseiries mystery reality d">
+          <div class="card">
+            <a href="description7.html">
+              <img src="image/7.jpeg" alt="" class="card-img-top"></a>
+            <div class="card-body">
+              <h5 class="card-title">Day break</h5>
+              <p class="card-text">Episodes: 3</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 mb-4 all adventure animation children fantasy horror miniseiries scifi t">
+          <div class="card">
+            <a href="description8.html">
+              <img src="image/11.jpg" alt="" class="card-img-top"></a>
+            <div class="card-body">
+              <h5 class="card-title">The War With Grandpa</h5>
+              <p class="card-text">Episodes: 5</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 mb-4 all action adventure family d">
+          <div class="card">
+            <a href="description9.html">
+              <img src="image/9.jpeg" alt="" class="card-img-top"></a>
+            <div class="card-body">
+              <h5 class="card-title">Dirk Gently's</h5>
+              <p class="card-text">Episodes: 1</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 mb-4 all action adventure comedy fantasy scifi sports t">
+          <div class="card">
+            <a href="description10.html">
+              <img src="image/10.jpeg" alt="" class="card-img-top"></a>
+            <div class="card-body">
+              <h5 class="card-title">The 100</h5>
+              <p class="card-text">Episodes: ‎2</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 mb-4 all family horror romance w">
+          <div class="card">
+            <a href="description11.html">
+              <img src="image/11.jpeg" alt="" class="card-img-top"></a>
+            <div class="card-body">
+              <h5 class="card-title">Walking Dead World Beyond</h5>
+              <p class="card-text">Episodes: ‎4</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 mb-4 all adventure crime horror mystery romance suspense thriller f">
+          <div class="card">
+            <a href="description12.html">
+              <img src="image/12.jpeg" alt="" class="card-img-top"></a>
+            <div class="card-body">
+              <h5 class="card-title">Fear The Walking Dead</h5>
+              <p class="card-text">Episodes: ‎20</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    $(document).ready(function () {
+      $("#myInput").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $(".col-lg-3").filter(function () {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+  </script>
+
+  <!-- footer -->
+  <footer>
+  	<div class="container">
+  		<div class="row">
+  			<div class="col-sm-2">
+  			<h6>Copyright &copy; 2021 {show-trackr}</h6>
+  			</div><!-- end col-sm-2 -->
+
+  			<div class="col-sm-2">
+  				<h6>Navigation</h6>
+  				<ul class="unstyled">
+  					<li><a href="#">Home</a></li>
+  					<li><a href="#">Add</a></li>
+  					<li><a href="#">Login</a></li>
+  					<li><a href="#">Signup</a></li>
+  				</ul>
+  			</div><!-- end col-sm-2 -->
+
+  			<div class="col-sm-2">
+  				<h6>Follow Us</h6>
+  				<ul class="unstyled">
+  					<li><a href="#">Twitter</a></li>
+  					<li><a href="#">Facebook</a></li>
+  					<li><a href="#">Google Plus</a></li>
+  				</ul>
+  			</div><!-- end col-sm-2 -->
+  		</div><!-- end row -->
+  	</div><!-- end container -->
+    <div class="credits">
+      Designed by <a href="https://bootstrapmade.com/">Niroo</a>
+    </div>
+  </footer>
+  <!-- end footer -->
+</body>
+
+</html>
